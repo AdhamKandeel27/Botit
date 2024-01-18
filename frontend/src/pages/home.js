@@ -5,7 +5,7 @@ import'../CSS/Home.css';
 const Home = () => {
   return (
     <div>
-      <h1>Adham Market</h1>
+      <h1>Botit Market</h1>
       <div className="buttons-container">
         <Link to="/signUp">
           <button className="button">New Customer</button>

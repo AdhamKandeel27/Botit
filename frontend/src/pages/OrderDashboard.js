@@ -1,6 +1,8 @@
 
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
+
 
 const OrderDashboard = () => {
   const [orders, setOrders] = useState([]);
@@ -50,7 +52,10 @@ const OrderDashboard = () => {
           ))}
         </tbody>
       </table>
-    </div>
+
+      <Link to="/orderFilter">
+          <button className="button">Filter Order</button>
+        </Link>    </div>
   );
 };
 
