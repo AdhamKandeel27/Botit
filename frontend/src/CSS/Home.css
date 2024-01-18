@@ -1,0 +1,52 @@
+/* Home.css */
+body {
+    font-family: 'Arial', sans-serif;
+    text-align: center;
+    background-image: url('../Images/supermarket\ bg.jpg'); /* Replace 'path/to/your/image.jpg' with the actual path to your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh; /* Set the height to 100% of the viewport height */
+    margin: 0; /* Remove default margin to fill the entire viewport */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  .logo-container {
+    margin-top: 50px;
+  }
+  
+  .logo {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .buttons-container {
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.8); /* Add a semi-transparent white background to improve readability */
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  h1 {
+    font-size: 72px; /* Adjust the value to change the font size for h1 */
+    color: #012b17; /* Optional: Adjust text color */
+  }
+  
+  .button {
+    font-size: 18px;
+    padding: 15px 30px;
+    margin: 10px;
+    cursor: pointer;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .button:hover {
+    background-color: #2980b9;
+  }
+  
