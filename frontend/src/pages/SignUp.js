@@ -1,4 +1,3 @@
-// Signup.js
 import React, { useState } from 'react';
 import axios from 'axios';
 import '../CSS/Form.css';
@@ -21,7 +20,7 @@ const Signup = () => {
   const handleSignup = async () => {
     try {
       const response = await axios.post('http://localhost:8000/api/signUp', formData);
-      console.log(response.data); // Handle success as needed
+      console.log(response.data); 
     } catch (error) {
       console.error('Error during signup:', error.message);
     }

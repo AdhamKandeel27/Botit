@@ -8,7 +8,6 @@ const OrderDashboard = () => {
   const [orders, setOrders] = useState([]);
 
   useEffect(() => {
-    // Fetch orders from your API endpoint
     axios.get('http://localhost:8000/api/orders')
       .then(response => {
         setOrders(response.data);
@@ -37,7 +36,7 @@ const OrderDashboard = () => {
               <td style={{ border: '1px solid #ddd', padding: '10px' }}>{order.customerName}</td>
               <td style={{ border: '1px solid #ddd', padding: '10px' }}>${order.totalAmount}</td>
               <td style={{ border: '1px solid #ddd', padding: '10px' }}>
-                {/* Displaying the 'productIdList' array if it exists */}
+                {}
                 {order.productIdList && order.productIdList.length > 0 ? (
                   <ul style={{ listStyleType: 'none', padding: 0 }}>
                     {order.productIdList.map((product, index) => (

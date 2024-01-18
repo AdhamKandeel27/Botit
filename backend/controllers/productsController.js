@@ -1,7 +1,5 @@
 const Product = require('../Models/Products');
 
-
-// Controller function to get all products
 const getAllProducts = async (req, res) => {
   try {
     const products = await Product.find();
@@ -11,12 +9,10 @@ const getAllProducts = async (req, res) => {
   }
 };
 
-// Controller function to get a single product by ID
 const getProductById = async (req, res) => {
   res.json(res.product);
 };
 
-// Controller function to create a new product
 const createProduct = async (req, res) => {
 
   console.log('Request Body:', req.body);
@@ -36,7 +32,6 @@ const createProduct = async (req, res) => {
   }
 };
 
-// Controller function to update a product by ID
 const updateProductById = async (req, res) => {
   if (req.body.name != null) {
     res.product.name = req.body.name;
@@ -56,7 +51,6 @@ const updateProductById = async (req, res) => {
   }
 };
 
-// Controller function to delete a product by ID
 const deleteProductById = async (req, res) => {
   try {
     await res.product.remove();

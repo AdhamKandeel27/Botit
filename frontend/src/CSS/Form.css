@@ -1,6 +1,3 @@
-/* Form.css */
-
-/* Base styling */
 .form-container {
   max-width: 300px;
   margin: auto;
@@ -42,7 +39,6 @@ input {
   background-color: #2980b9;
 }
 
-/* Additional styling for a more colorful form */
 .form-container {
   background-color: #ecf0f1;
 }
@@ -55,4 +51,3 @@ input {
   background-color: #3b5998;
 }
 
-/* Add more styling as needed */

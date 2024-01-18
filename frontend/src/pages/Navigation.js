@@ -14,7 +14,7 @@ const Navigation = () => {
         <li>
           <Link to="/about">About</Link>
         </li>
-        {/* Add more navigation items as needed */}
+        {}
       </ul>
     </nav>
   );

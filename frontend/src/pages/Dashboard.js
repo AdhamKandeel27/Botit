@@ -1,17 +1,14 @@
-// Dashboard.js
 import React from 'react';
 import { Card, Row, Col, Table } from 'antd';
 
 const orderData = [
   { orderId: '1', customerName: 'John Doe', totalAmount: 100 },
   { orderId: '2', customerName: 'Jane Doe', totalAmount: 150 },
-  // Add more order data as needed
 ];
 
 const productData = [
   { productId: '101', productName: 'Product A', price: 50, quantity: 2 },
   { productId: '102', productName: 'Product B', price: 30, quantity: 3 },
-  // Add more product data as needed
 ];
 
 const Dashboard = () => {
