@@ -1,8 +1,6 @@
 import React from 'react';
 import './App.css';
-import orderSummary from './pages/orderSummary';
 import home from './pages/home';
-import navigation from './pages/Navigation';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import productDetails from './pages/productDetails';
 import OrderDashboard from './pages/OrderDashboard';
@@ -24,10 +22,8 @@ const App = () => {
         <Router>
             <Routes>
                 <Route exact path="/" Component={home} />
-                <Route exact path="/orderSummary" Component={orderSummary} />
                 <Route exact path="/orders" Component={OrderDashboard} />
                 <Route exact path="/products" Component={productDetails} />
-                <Route exact path="/navigation" Component={navigation} />
                 <Route exact path="/signUp" Component={Signup} />
                 <Route exact path="/signIn" Component={SignIn} />
                 <Route exact path="/orderFilter" Component={OrderFilter} />

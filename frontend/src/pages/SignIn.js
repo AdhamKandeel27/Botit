@@ -31,11 +31,11 @@ const Signin = () => {
       <h2>Sign In</h2>
       <div>
         <label>Email:</label>
-        <input type="email" name="email" onChange={handleInputChange} />
+        <input type="email" placeholder='Email' name="email" onChange={handleInputChange} />
       </div>
       <div>
         <label>Password:</label>
-        <input type="password" name="password" onChange={handleInputChange} />
+        <input type="password" placeholder='Password' name="password" onChange={handleInputChange} />
       </div>
       <Link to="/profile">
         <button onClick={handleSignin}>Sign In</button>

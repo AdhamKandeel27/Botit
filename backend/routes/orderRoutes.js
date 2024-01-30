@@ -1,4 +1,3 @@
-// routes/orderRoutes.js
 const express = require('express');
 const router = express.Router();
 const orderController = require('../controllers/ordersController');
@@ -13,6 +12,6 @@ router.post('/orders', orderController.createOrder);
 
 router.put('/orders/:id', orderController.updateOrderById);
 
-router.delete('/orders/:id', orderController.deleteOrderById);
+//router.delete('/orders/:id', orderController.deleteOrderById);
 
 module.exports = router;

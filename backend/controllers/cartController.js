@@ -1,38 +1,15 @@
 
-const Order = require('../Models/Orders');
+const Cart = require('../Models/Cart');
 
-const getAllOrders = async (req, res) => {
+const getAllCartItems = async (req, res) => {
   try {
-    const orders = await Order.find().populate('productIdList'); 
-    res.json(orders);
+    const items = await Cart.find().populate('productIdList'); 
+    res.json(items);
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
 };
 
-const getFilteredOrders = async (req, res) => {
-  try {
-    const { startDate, endDate, minPrice, maxPrice } = req.query;
-
-    const filterCriteria = {};
-    if (startDate || endDate) {
-      filterCriteria.date = {};
-      if (startDate) filterCriteria.date.$gte = new Date(startDate);
-      if (endDate) filterCriteria.date.$lte = new Date(endDate);
-    }
-    if (minPrice || maxPrice) {
-      filterCriteria.totalAmount = {};
-      if (minPrice) filterCriteria.totalAmount.$gte = parseFloat(minPrice);
-      if (maxPrice) filterCriteria.totalAmount.$lte = parseFloat(maxPrice);
-    }
-
-      const filteredOrders = await Order.find(filterCriteria).populate('productIdList'); 
-
-    res.json(filteredOrders);
-  } catch (error) {
-    res.status(500).json({ message: error.message });
-  }
-};
 const getOrderById = async (req, res, next) => {
   try {
     const order = await Order.findById(req.params.id).populate('productIdList'); 
@@ -48,12 +25,13 @@ const getOrderById = async (req, res, next) => {
   }
 };
 
-const createOrder = async (req, res) => {
-  const { customerName, productIdList, totalAmount } = req.body;
+const addToCart = async (req, res) => {
+  const  productIdList  = req.body;
 
   try {
     const newOrder = new Order({ customerName, productIdList, totalAmount});
     const savedOrder = await newOrder.save();
+    ca
     
     res.status(201).json(savedOrder);
   } catch (error) {
@@ -75,6 +53,15 @@ const updateOrderById = async (req, res) => {
   }
 };
 
+const deleteOrderById = async (req, res) => {
+  try {
+
+    await req.order.remove();
+    res.json({ message: 'Order deleted' });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 
 module.exports = {
   getAllOrders,
@@ -82,4 +69,5 @@ module.exports = {
   getOrderById,
   createOrder,
   updateOrderById,
+  deleteOrderById,
 };

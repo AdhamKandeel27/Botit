@@ -1,5 +1,7 @@
 const User = require('../Models/userModel');
 const bcrypt = require('bcrypt');
+const jwt = require("jsonwebtoken");
+
 
 
 
@@ -15,17 +17,28 @@ const signIn = async (req, res) => {
 
     const isPasswordValid = await bcrypt.compare(password, user.password);
 
-    if (!isPasswordValid) {
-      return res.status(401).json({ message: 'Invalid email or password' });
+    if (isPasswordValid) {
+      const token1 = jwt.sign({}, process.env.JWT_SECRET);
+
+      if (res.status(201)) {
+        return res.json({ status: "ok", data: token1 })
+      }
+      else {
+        return res.json({ error: "errorrrr" })
+      }
     }
 
-    const token= await user.jwtGenerateToken();
+    return res.status(401).json({ message: 'Invalid  password' });
 
-    res.json({
-      message: 'Sign-in successful',
+    //const token = await user.jwtGenerateToken();
+    //const token1 = jwt.sign({}, process.env.JWT_SECRET);
 
-      token
-    });
+
+    // res.json({
+    //   message: 'Sign-in successful',
+
+    //   token
+    // });
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
@@ -34,3 +47,7 @@ const signIn = async (req, res) => {
 module.exports = {
   signIn,
 };
+
+
+
+
