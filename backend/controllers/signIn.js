@@ -27,7 +27,7 @@ const signIn = async (req, res) => {
         return res.json({ error: "errorrrr" })
       }
     }
-
+    
     return res.status(401).json({ message: 'Invalid  password' });
 
     //const token = await user.jwtGenerateToken();

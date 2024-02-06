@@ -24,6 +24,7 @@ const Signup = () => {
     } catch (error) {
       console.error('Error during signup:', error.message);
     }
+    
   };
 
   return (

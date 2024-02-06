@@ -27,7 +27,7 @@ const getFilteredOrders = async (req, res) => {
     }
 
       const filteredOrders = await Order.find(filterCriteria).populate('productIdList'); 
-
+      
     res.json(filteredOrders);
   } catch (error) {
     res.status(500).json({ message: error.message });

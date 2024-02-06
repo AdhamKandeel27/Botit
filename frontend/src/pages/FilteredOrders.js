@@ -28,6 +28,7 @@ const FilteredOrdersTable = ({ filteredOrders }) => {
                 ))}
               </tr>
             ))}
+            
           </tbody>
         </table>
       ) : (

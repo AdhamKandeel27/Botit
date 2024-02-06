@@ -3,6 +3,7 @@ body {
     text-align: center;
     background-image: url('../Images/supermarket\ bg.jpg'); 
     background-size: cover;
+    
     background-position: center;
     background-repeat: no-repeat;
     height: 100vh; 

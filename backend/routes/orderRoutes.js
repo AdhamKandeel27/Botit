@@ -12,6 +12,6 @@ router.post('/orders', orderController.createOrder);
 
 router.put('/orders/:id', orderController.updateOrderById);
 
-//router.delete('/orders/:id', orderController.deleteOrderById);
+
 
 module.exports = router;

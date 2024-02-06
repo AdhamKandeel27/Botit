@@ -64,10 +64,9 @@ const deleteOrderById = async (req, res) => {
 };
 
 module.exports = {
-  getAllOrders,
-  getFilteredOrders,
+  getAllCartItems,
   getOrderById,
-  createOrder,
+  addToCart,
   updateOrderById,
   deleteOrderById,
 };

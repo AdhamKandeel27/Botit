@@ -18,6 +18,7 @@ const ProductList = () => {
     };
 
     fetchProducts();
+    
   }, []);
 
   return (
